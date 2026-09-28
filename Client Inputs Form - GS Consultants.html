@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS Consultants — Client Information Request</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --cream:#FBF8F1;--cream-2:#F3ECDD;--paper:#fff;
+    --navy:#0B1626;--navy-2:#132339;
+    --gold:#B8894B;--gold-lt:#DDB978;--gold-dk:#926A2C;
+    --ink:#2f3b49;--muted:#566072;--line:rgba(11,22,38,.14);
+    --serif:'Playfair Display',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  }
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;padding:0 0 60px}
+  .doc{width:min(880px,94%);margin:0 auto;background:var(--paper);box-shadow:0 30px 80px -50px rgba(11,22,38,.5);border-top:6px solid var(--gold)}
+
+  header.masthead{background:var(--navy);color:#fff;padding:38px 48px 32px;position:relative;overflow:hidden}
+  header.masthead::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(221,185,120,.25),transparent 70%)}
+  .brand{font-family:var(--serif);font-size:26px;letter-spacing:.5px;font-weight:700}
+  .brand span{color:var(--gold-lt)}
+  .tagline{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:4px}
+  header.masthead h1{font-family:var(--serif);font-size:30px;font-weight:800;margin-top:22px;line-height:1.25;position:relative;z-index:1}
+  header.masthead p.lead{color:rgba(255,255,255,.82);max-width:60ch;margin-top:10px;font-size:15px;position:relative;z-index:1}
+
+  .intro{padding:28px 48px 8px;font-size:14.5px;color:var(--muted)}
+  .intro b{color:var(--ink)}
+  .keybox{margin:18px 48px 0;background:var(--cream-2);border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 8px 8px 0;font-size:14px;color:var(--ink)}
+  .keybox strong{color:var(--gold-dk)}
+
+  main{padding:8px 48px 24px}
+  section.block{margin-top:34px;page-break-inside:avoid}
+  .sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--navy);padding-bottom:8px;margin-bottom:6px}
+  .sec-num{font-family:var(--serif);font-weight:800;font-size:22px;color:var(--gold)}
+  .sec-title{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--navy)}
+  .sec-flag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+  .flag-req{background:rgba(184,137,75,.15);color:var(--gold-dk)}
+  .flag-opt{background:rgba(11,22,38,.07);color:var(--muted)}
+
+  .field{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .field:last-child{border-bottom:none}
+  .q{font-weight:600;font-size:14.5px;color:var(--ink);margin-bottom:7px}
+  .hint{font-weight:400;color:var(--muted);font-size:13px}
+  .input{display:block;width:100%;height:34px;border:none;border-bottom:1.5px solid var(--line);background:transparent;font:inherit;font-size:14px;color:var(--navy);padding:2px 2px;border-radius:0}
+  .input:focus{outline:none;border-bottom-color:var(--gold)}
+  .input.long{height:56px;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+  .row{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;margin-top:2px}
+  label.chk{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--ink);cursor:pointer}
+  input[type=checkbox]{width:16px;height:16px;accent-color:var(--gold);cursor:pointer}
+  .inline-blank{display:inline-block;min-width:180px;border-bottom:1.5px solid var(--line)}
+  .sub{margin:8px 0 4px 22px;font-size:13.5px;color:var(--muted)}
+
+  footer.signoff{padding:26px 48px 40px;border-top:1px solid var(--line);margin-top:30px;background:var(--cream)}
+  .sigrow{display:flex;gap:40px;flex-wrap:wrap;margin-top:14px}
+  .sig{flex:1;min-width:220px}
+  .sig label{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:22px}
+  .sig .input{border-bottom:1.5px solid var(--navy)}
+  .closing{font-size:14px;color:var(--ink);margin-top:24px;text-align:center;font-style:italic}
+
+  .print-hint{text-align:center;font-size:12.5px;color:var(--muted);margin:22px auto 0;width:min(880px,94%)}
+  .print-hint kbd{background:var(--navy);color:#fff;padding:1px 6px;border-radius:4px;font-family:var(--sans);font-size:11px}
+  .toolbar{position:fixed;top:16px;right:16px;z-index:50;background:var(--gold);color:#fff;border:none;font:inherit;font-weight:600;font-size:13px;padding:10px 18px;border-radius:24px;cursor:pointer;box-shadow:0 10px 24px -12px rgba(146,106,44,.8)}
+  .toolbar:hover{background:var(--gold-dk)}
+
+  @media (max-width:640px){
+    header.masthead,.intro,.keybox,main,footer.signoff{padding-left:22px;padding-right:22px}
+    .keybox{margin-left:22px;margin-right:22px}
+    header.masthead h1{font-size:24px}
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    .doc{box-shadow:none;width:100%;max-width:100%}
+    .toolbar,.print-hint{display:none}
+    section.block{page-break-inside:avoid}
+    header.masthead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    @page{margin:14mm}
+  }
+</style>
+</head>
+<body>
+<button class="toolbar" onclick="window.print()">⎙ Save as PDF / Print</button>
+
+<div class="doc">
+  <header class="masthead">
+    <div class="brand">GS <span>Consultants</span></div>
+    <div class="tagline">Advice That Matters</div>
+    <h1>Website Launch — Client Information Request</h1>
+    <p class="lead">Please complete the fields below and return this form (or reply with the same numbers) so we can finalize and take your new website live.</p>
+  </header>
+
+  <div class="intro">
+    <p><b>How to use:</b> Fill the items marked <b>[Required]</b> before go-live. Items marked <b>[Optional]</b> can be added anytime after launch. You can type directly into this page, then use the <b>“Save as PDF / Print”</b> button to send it back.</p>
+  </div>
+
+  <div class="keybox">
+    <strong>Fastest path to launch:</strong> send us <strong>① Domain</strong>, <strong>② DNS access</strong>, <strong>③ Hosting choice</strong> (Section 1) and <strong>your contact details</strong> (Section 2). Everything else can follow.
+  </div>
+
+  <main>
+    <!-- SECTION 1 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Domain, DNS &amp; Hosting</span><span class="sec-flag flag-req">Required</span></div>
+
+      <div class="field">
+        <div class="q">1.1 &nbsp;Preferred domain name <span class="hint">(e.g., gsconsultants.in / .com)</span></div>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field">
+        <div class="q">1.2 &nbsp;Is the domain already registered?</div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> Yes</label>
+          <label class="chk"><input type="checkbox"> No</label>
+          <span class="hint">If yes — Registrar:</span>
+          <span class="inline-blank"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="q">1.3 &nbsp;Domain expiry / renewal date <span class="hint">(if registered)</span></div>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field">
+        <div class="q">1.4 &nbsp;Other domains you own that should redirect to the main site</div>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field">
+        <div class="q">1.5 &nbsp;DNS provider — where are nameservers currently managed? <span class="hint">(Registrar default / Cloudflare / Hostinger / Other)</span></div>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field">
+        <div class="q">1.6 &nbsp;DNS access — how would you like to give us access?</div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> Share login credentials</label>
+          <label class="chk"><input type="checkbox"> Add us as a delegated / admin user</label>
+          <label class="chk"><input type="checkbox"> You send records, we paste them</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="q">1.7 &nbsp;Hosting — do you already have a hosting account?</div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> Yes → Provider &amp; access:</label>
+          <span class="inline-blank" style="min-width:260px"></span>
+        </div>
+        <div class="sub">If no — choose a route for us to set up:</div>
+        <div class="row" style="flex-direction:column;align-items:flex-start;gap:6px;margin-left:22px">
+          <label class="chk"><input type="checkbox"> Managed static hosting (Vercel / Netlify / Cloudflare Pages) — <b>recommended</b> (fast, free tier, auto-SSL)</label>
+          <label class="chk"><input type="checkbox"> Traditional cPanel / shared host (Hostinger / GoDaddy / BigRock) — useful if you also want email on the same plan</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="q">1.8 &nbsp;Existing email on this domain? <span class="hint">(e.g., info@gsconsultants.in) — we’ll preserve mail records so email never stops</span></div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> No</label>
+          <label class="chk"><input type="checkbox"> Yes → Provider:</label>
+          <span class="inline-blank" style="min-width:240px"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="q">1.9 &nbsp;SSL certificate</div>
+        <div class="row">
+          <span class="hint">We issue free SSL automatically.</span>
+          <label class="chk"><input type="checkbox"> No preference</label>
+          <label class="chk"><input type="checkbox"> Yes, preference:</label>
+          <span class="inline-blank"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="q">1.10 &nbsp;Google Analytics 4 Measurement ID <span class="hint">(if you have one)</span></div>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field">
+        <div class="q">1.11 &nbsp;Permission to verify Google Search Console <span class="hint">(needs DNS access)</span></div>
+        <div class="row"><label class="chk"><input type="checkbox"> Approved</label></div>
+      </div>
+
+      <div class="field">
+        <div class="q">1.12 &nbsp;Meta / Facebook Pixel or WhatsApp Business verification needed?</div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> No</label>
+          <label class="chk"><input type="checkbox"> Yes:</label>
+          <span class="inline-blank"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Contact &amp; Lead Capture</span><span class="sec-flag flag-req">Required</span></div>
+
+      <div class="field">
+        <div class="q">2.1 &nbsp;Where should contact-form submissions be delivered?</div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> Email:</label><span class="inline-blank"></span>
+          <label class="chk"><input type="checkbox"> WhatsApp:</label><span class="inline-blank"></span>
+          <label class="chk"><input type="checkbox"> CRM:</label><span class="inline-blank"></span>
+        </div>
+      </div>
+      <div class="field">
+        <div class="q">2.2 &nbsp;Official phone number(s) to display</div>
+        <input class="input" type="text">
+      </div>
+      <div class="field">
+        <div class="q">2.3 &nbsp;WhatsApp number for the floating chat button</div>
+        <input class="input" type="text">
+      </div>
+      <div class="field">
+        <div class="q">2.4 &nbsp;Public email address to display <span class="hint">(e.g., contact@gsconsultants.in)</span></div>
+        <input class="input" type="text">
+      </div>
+      <div class="field">
+        <div class="q">2.5 &nbsp;Full office address (as it should appear on the site)</div>
+        <textarea class="input long"></textarea>
+      </div>
+      <div class="field">
+        <div class="q">2.6 &nbsp;Google Map link / embed for your office</div>
+        <input class="input" type="text">
+      </div>
+      <div class="field">
+        <div class="q">2.7 &nbsp;Office hours / working days</div>
+        <input class="input" type="text">
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Social &amp; Profiles</span><span class="sec-flag flag-opt">Optional</span></div>
+      <div class="field"><div class="q">3.1 &nbsp;Instagram URL</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">3.2 &nbsp;LinkedIn company page URL</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">3.3 &nbsp;Facebook / X / YouTube</div><input class="input" type="text"></div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Booking &amp; Conversion</span><span class="sec-flag flag-opt">Optional</span></div>
+      <div class="field"><div class="q">4.1 &nbsp;Express consultation booking link <span class="hint">(Cal.com / Calendly / Razorpay)</span></div><input class="input" type="text"></div>
+      <div class="field"><div class="q">4.2 &nbsp;Payment gateway / UPI ID <span class="hint">(if collecting paid consultation fees)</span></div><input class="input" type="text"></div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Credentials &amp; Legal</span><span class="sec-flag flag-req">Required</span></div>
+      <div class="field"><div class="q">5.1 &nbsp;GSTIN</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">5.2 &nbsp;Firm Registration No.</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">5.3 &nbsp;ICAI membership number(s) / firm code</div><input class="input" type="text"></div>
+      <div class="field">
+        <div class="q">5.4 &nbsp;Approval of Privacy Policy, Terms of Use &amp; Disclaimer <span class="hint">(drafts prepared — review &amp; confirm)</span></div>
+        <div class="row">
+          <label class="chk"><input type="checkbox"> Approved</label>
+          <label class="chk"><input type="checkbox"> Changes requested:</label><span class="inline-blank" style="min-width:280px"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">Content &amp; Assets</span><span class="sec-flag flag-req">Required</span></div>
+      <div class="field"><div class="q">6.1 &nbsp;Final list of services &amp; short descriptions <span class="hint">(7 categories)</span></div><textarea class="input long"></textarea></div>
+      <div class="field"><div class="q">6.2 &nbsp;Blog / article links (if any)</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">6.3 &nbsp;Testimonials &amp; client logos <span class="hint">(confirm usage permission)</span></div><input class="input" type="text"></div>
+      <div class="field"><div class="q">6.4 &nbsp;About / founder bio, qualifications &amp; photo</div><textarea class="input long"></textarea></div>
+      <div class="field"><div class="q">6.5 &nbsp;Professional photography (office / team) — attach or share link</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">6.6 &nbsp;Final logo files <span class="hint">(vector / source preferred)</span></div><input class="input" type="text"></div>
+    </section>
+
+    <!-- SECTION 7 -->
+    <section class="block">
+      <div class="sec-head"><span class="sec-num">07</span><span class="sec-title">Optional Extras</span><span class="sec-flag flag-opt">Optional</span></div>
+      <div class="field">
+        <div class="q">7.1 &nbsp;Multi-language support (e.g., Hindi)?</div>
+        <div class="row"><label class="chk"><input type="checkbox"> No</label><label class="chk"><input type="checkbox"> Yes:</label><span class="inline-blank"></span></div>
+      </div>
+      <div class="field"><div class="q">7.2 &nbsp;FAQ content to add?</div><div class="row"><label class="chk"><input type="checkbox"> No</label><label class="chk"><input type="checkbox"> Yes</label></div></div>
+      <div class="field"><div class="q">7.3 &nbsp;Careers page?</div><div class="row"><label class="chk"><input type="checkbox"> No</label><label class="chk"><input type="checkbox"> Yes</label></div></div>
+      <div class="field"><div class="q">7.4 &nbsp;Live chat tool preference (beyond WhatsApp)?</div><input class="input" type="text"></div>
+      <div class="field"><div class="q">7.5 &nbsp;Any brand tone / style preferences</div><input class="input" type="text"></div>
+    </section>
+  </main>
+
+  <footer class="signoff">
+    <div class="sigrow">
+      <div class="sig"><label>Submitted by</label><input class="input" type="text"></div>
+      <div class="sig"><label>Date</label><input class="input" type="text"></div>
+    </div>
+    <p class="closing">Thank you — once we receive Sections 1 &amp; 2, we can schedule your go-live and refine the rest.</p>
+  </footer>
+</div>
+
+<p class="print-hint">Tip: click <b>“Save as PDF / Print”</b> (or press <kbd>Ctrl</kbd> + <kbd>P</kbd>) → destination <b>Save as PDF</b>.</p>
+</body>
+</html>

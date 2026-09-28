@@ -1,0 +1,128 @@
+For GS Consultants, I’d structure the opening like this:
+
+1. Introduction / Hero Section
+
+GS CONSULTANTS
+
+CA • CS • LEGAL SERVICES
+
+Advice That Matters.
+
+Integrated professional solutions for individuals, entrepreneurs, startups and businesses — across Accounting, Taxation, Audit, Corporate Compliance and Legal Services.
+
+[Our Services] [Get in Touch]
+
+⸻
+
+2. About Us
+
+About GS Consultants
+
+GS Consultants is a professional CA, CS & Legal Services firm providing comprehensive financial, taxation, accounting, corporate and legal solutions to businesses and individuals.
+
+Our services extend across the complete business lifecycle — from setting up and incorporating a business to managing its accounting, taxation, statutory requirements, corporate compliances and legal documentation.
+
+We assist clients with Accounting & Bookkeeping, Income Tax, GST, Audit, Company & LLP Incorporation, ROC Compliance, Company Law matters, Trademark Registration, Legal Drafting and Business Advisory.
+
+Our approach is built around one principle:
+
+Advice That Matters.
+
+We don’t aim to simply complete a compliance or file a return. We focus on understanding the requirement, providing clear professional advice and helping clients make informed decisions while keeping their financial and regulatory responsibilities in order.
+
+Professional Expertise | Practical Advice | End-to-End Support
+
+⸻
+
+3. Why GS Consultants
+
+Instead of putting random statistics such as “50+ clients” unless you can substantiate them, I would make this section about real proof.
+
+Why Choose GS Consultants?
+
+01 — Multi-disciplinary Expertise
+CA, CS & Legal services under one roof.
+
+02 — End-to-End Support
+From incorporation and accounting to taxation, compliance and legal documentation.
+
+03 — Business-Focused Approach
+Solutions designed around the client’s actual business requirements.
+
+04 — Professional & Timely Execution
+Structured handling of recurring and event-based requirements.
+
+05 — Clear, Practical Advice
+Because compliance is not just about filing — it is about making the right decisions.
+
+⸻
+
+4. Our Services
+
+I would not put all services into one long list. The reference website also separates services into categories, which makes a professional-services website easier to navigate. 
+
+Accounting & Finance
+
+* Accounting & Bookkeeping
+* Financial Statements
+* MIS & Financial Reporting
+* Accounting Advisory
+
+Taxation & GST
+
+* Income Tax
+* GST Registration & Compliance
+* Tax Returns
+* Tax Advisory
+* TDS & Related Compliance
+
+Audit & Assurance
+
+* Statutory Audit
+* Tax Audit
+* Internal Audit
+* Audit & Assurance Support
+
+Corporate & Secretarial Services
+
+* Company & LLP Incorporation
+* ROC Compliance
+* Annual & Event-Based Compliances
+* Company Law Matters
+* Board & Corporate Documentation
+
+Intellectual Property
+
+* Trademark Registration
+* Trademark Compliance
+* IP Documentation & Support
+
+Legal Services
+
+* Legal Drafting
+* Agreements & Contracts
+* Business Documentation
+* Corporate Legal Support
+
+Business Advisory
+
+* Business Structuring
+* Regulatory Advisory
+* Financial Advisory
+* Compliance Advisory
+
+This positioning makes GS Consultants feel like a professional business-services firm, rather than an Instagram-style “CA services” page, while still making the CA, CS and legal capabilities immediately clear.
+
+I want to include a vision and mission statement as well for the website:
+
+I want a pulsating whatsapp logo on the bottom right of the screen. And I want Linkedin and Instagram in the footer as links to be available to the visitor of the website. 
+
+Analyse this website and tell me what you need in terms of data points from me as the user. 
+
+I have uploaded the GS consultants logo for your reference. Use all this information and make the static site for me to build. Also, at the top hero section, i want an option on the right which says "Have a query or doubt? Book an express consultation for just Rs 99". Book now button right below. 
+
+I also want a form at the end of the page where users can fill to get in touch with GS consultants. The footer of the website should have an option which says Built with (heart) by Swaniki and hyperlink Swaniki to the Swaniki website - Swaniki.com
+
+If you have not done as yet, then add a trust proof bar to the website below the hero section. Also, add multiple transitions where possible and add the wow factor. but add the transitions which add premiumness to the website. it need to be clean and polished for the end user. 
+
+Make sure the website is visually appealing. Currently the website looks very plain jane with regards to UI. i need it to be visually a lot more polished. have a design agent review the website and suggest improvements to the website design 
